@@ -23,6 +23,8 @@ class OderRes(Resource):
         parser.add_argument(name="user", type=str, location="json")
         parser.add_argument(name="code", type=str, location="json")
         parser.add_argument(name="name", type=str, location="json")
+        parser.add_argument(name="id", type=str, location="json")
+        parser.add_argument(name="count", type=int, location="json")
         body = parser.parse_args()
         items = body["items"]
         date = datetime.datetime.today().strftime('%d-%m-%Y')
@@ -59,8 +61,8 @@ class OderRes(Resource):
         order_items = []
         spend = 0
         for item in items:
-            food_id = item["id"]
-            count = item["count"]
+            food_id = body["id"]
+            count = body["count"]
             try:
                 sl = int(count)
                 if sl < 1:
