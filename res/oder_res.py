@@ -105,10 +105,10 @@ class OderRes(Resource):
             return {"message": "Đăth lằm đặt lốn!"}, 404
         oder.save()
         add_oder = Oder.objects().with_id(oder.id)
-        apikey = "AAAAhgLLpbs:APA91bGLuFvqDwvWs7L7RNnMHwus426M1fi5oLSP2azB5jOhB2jW2i91uIZF7jrECoyUYk-c-h5yyp4DY0oKFhEgg3S6o7fsv7dc-M5aBDdwxbYaWgXVn3HFEqImNYEm6xfyeMqb4lAR"
-        push_service = FCMNotification(api_key=apikey)
-        push_service.notify_topic_subscribers(topic_name="admin", message_body="Có đơn hàng mới",
-                                              message_title="Kiểm tra ngay")
+        #apikey = "AAAAhgLLpbs:APA91bGLuFvqDwvWs7L7RNnMHwus426M1fi5oLSP2azB5jOhB2jW2i91uIZF7jrECoyUYk-c-h5yyp4DY0oKFhEgg3S6o7fsv7dc-M5aBDdwxbYaWgXVn3HFEqImNYEm6xfyeMqb4lAR"
+        #push_service = FCMNotification(api_key=apikey)
+        #push_service.notify_topic_subscribers(topic_name="admin", message_body="Có đơn hàng mới",
+        #                                      message_title="Kiểm tra ngay")
         return mlab.item2json(add_oder), 200
 
 
