@@ -61,8 +61,9 @@ class OderRes(Resource):
         order_items = []
         spend = 0
         for item in items:
-            food_id = item.id
-            count = item.count
+            print("id:",item["id"]," ;count:",item["count"])
+            food_id = item["id"]
+            count = item["count"]
             try:
                 sl = int(count)
                 if sl < 1:
